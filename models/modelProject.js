@@ -2,7 +2,10 @@ import mongoose, { model } from "mongoose";
 
 const modelProjectSchema = mongoose.Schema({
     name: String,
-    value: Number,
+    url: String,
+    description: String,
+    category: String
+
 });
 
 const modelProject = mongoose.model("modelProjectSchema", modelProjectSchema);
