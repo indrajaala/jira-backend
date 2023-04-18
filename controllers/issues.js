@@ -31,3 +31,14 @@ export const updateIssues = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
+
+export const deleteIssues = async (req, res) => {
+    try{
+        const issue = await modelIssue.deleteOne({_id:req.query.id});
+        res.status(200).json(issue);
+
+    } catch (error) {
+        console.log("error world");
+        res.status(404).json({ message: error.message });
+    }
+}
