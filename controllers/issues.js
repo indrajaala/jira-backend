@@ -23,6 +23,8 @@ export const createIssues = async (req, res) => {
 
 export const updateIssues = async (req, res) => {
     try{
+        console.log("the id is", req.query.id);
+        console.log("the body is", req.body);
         const issue = await modelIssue.updateOne({_id:req.query.id}, { $set: req.body });
         res.status(200).json(issue);
 
