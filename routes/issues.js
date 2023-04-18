@@ -5,5 +5,5 @@ const router = express.Router();
 router.get("/", getIssues);
 router.post("/", createIssues);
 router.put("/", updateIssues);
-router.delete("/", deleteIssues())
+router.delete("/", deleteIssues)
 export default router;
