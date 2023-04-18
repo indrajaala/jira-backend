@@ -12,8 +12,8 @@ export const getIssues = async (req, res) => {
 
 export const createIssues = async (req, res) => {
     try{
-        console.log("the body is", req.body);
-        // const issue = await modelIssue.create(req.body);
+        const issue = await modelIssue.create(req.body);
+        res.status(200).json(issue);
 
     } catch (error) {
         console.log("error world");
