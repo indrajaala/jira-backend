@@ -12,6 +12,7 @@ export const getIssues = async (req, res) => {
 
 export const getIssue = async(req, res) => {
     try {
+        console.log("the single issue route is logged!")
         const issue = await modelIssue.findOne({_id:req.query.id});
         res.status(200).json(issue);
     } catch (error) {
