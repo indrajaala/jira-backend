@@ -10,6 +10,16 @@ export const getIssues = async (req, res) => {
     }
 };
 
+export const getIssue = async(req, res) => {
+    try {
+        const issue = await modelIssue.findOne({_id:req.query.id});
+        res.status(200).json(issue);
+    } catch (error) {
+        console.log("error world");
+        res.status(404).json({ message: error.message });
+    }
+}
+
 export const createIssues = async (req, res) => {
     try{
         const issue = await modelIssue.create(req.body);
