@@ -23,7 +23,7 @@ export const createIssues = async (req, res) => {
 
 export const updateIssues = async (req, res) => {
     try{
-        const issue = await modelIssue.updateOne({_id:req.query.id}, { $set: { name: 'Jean-Luc Picard' } });
+        const issue = await modelIssue.updateOne({_id:req.query.id}, { $set: req.body });
         res.status(200).json(issue);
 
     } catch (error) {
