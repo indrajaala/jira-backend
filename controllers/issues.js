@@ -12,7 +12,6 @@ export const getIssues = async (req, res) => {
 
 export const getIssue = async(req, res) => {
     try {
-        console.log("the params are ", req.params);
         const issue = await modelIssue.findOne({_id:req.params.id});
         res.status(200).json(issue);
     } catch (error) {
