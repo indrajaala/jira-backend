@@ -3,7 +3,7 @@ import {getIssues,getIssue, createIssues, updateIssues, deleteIssues} from "../c
 
 const router = express.Router();
 router.get("/", getIssues);
-router.get("/getIssue", getIssue);
+router.get("/:id", getIssue);
 router.post("/", createIssues);
 router.put("/", updateIssues);
 router.delete("/", deleteIssues)

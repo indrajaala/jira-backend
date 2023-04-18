@@ -12,8 +12,8 @@ export const getIssues = async (req, res) => {
 
 export const getIssue = async(req, res) => {
     try {
-        console.log("the single issue route is logged!")
-        const issue = await modelIssue.findOne({_id:req.query.id});
+        console.log("the params are ", req.params.id);
+        const issue = await modelIssue.findOne({_id:req.params.id});
         res.status(200).json(issue);
     } catch (error) {
         console.log("error world");
