@@ -6,7 +6,8 @@ const modelIssueSchema = mongoose.Schema({
     description: String,
     priority: String,
     status:String,
-    estimate: Number
+    estimate: Number,
+    index:Number
 });
 
 const modelIssue = mongoose.model("modelIssueSchema", modelIssueSchema);
